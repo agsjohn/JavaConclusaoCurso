@@ -3,6 +3,8 @@
 ## Sobre o projeto
 TaskBridge é um programa feito em Java que consiste em um gerenciador de projetos, ele possui interface gráfica e se conecta com um banco de dados MySQL, o qual salva os dados de projetos, tarefas e usuários em tabelas.
 
+Este programa é um trabalho de conclusão de curso técnico em informática, feito para disciplina de Programação Orientada a Objetos II. 
+
 ## Interface gráfica
 Programa possui interface gráfica feita com Java Swing
 
