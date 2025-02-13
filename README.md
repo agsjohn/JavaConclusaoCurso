@@ -1,5 +1,5 @@
 # TaskBridge - Trabalho de conclusão JAVA
-[![NPM](https://img.shields.io/npm/l/react)(https://github.com/agsjohn/TaskBridge/blob/master/LICENSE)
+[![NPM](https://img.shields.io/npm/l/react)(https://github.com/agsjohn/TaskBridge/blob/master/LICENSE)]
 
 ## Sobre o projeto
 TaskBridge é um programa feito em Java que consiste em um gerenciador de projetos, ele possui interface gráfica e se conecta com um banco de dados MySQL, o qual salva os dados de projetos, tarefas e usuários em tabelas.
