@@ -41,9 +41,9 @@ public class TarefasDAO {
                 String nomeTarefa = rs.getString("nomeTarefa");
                 String descricaoTarefa = rs.getString("descricaoTarefa");
                 Date dataCriacaoTarefa = rs.getDate("dataCriacaoTarefa");
-                Date dataConslusaoTarefa = rs.getDate("dataConslusaoTarefa");
+                Date dataConclusaoTarefa = rs.getDate("dataConclusaoTarefa");
                 String estadoTarefa = rs.getString("estadoTarefa");
-                tarefas.add(new Tarefas(idTarefa, idProjeto, nomeTarefa, descricaoTarefa, dataCriacaoTarefa, dataConslusaoTarefa, estadoTarefa));
+                tarefas.add(new Tarefas(idTarefa, idProjeto, nomeTarefa, descricaoTarefa, dataCriacaoTarefa, dataConclusaoTarefa, estadoTarefa));
             }
         } catch (SQLException sqle) {
             JOptionPane.showMessageDialog(null, "Erro ao listar tarefas " + sqle);
@@ -62,7 +62,7 @@ public class TarefasDAO {
             JOptionPane.showMessageDialog(null, "O objeto tarefa não pode ser nulo.");
         }
         try {
-            String SQL = "INSERT INTO tarefas (idProjeto, nomeTarefa, descricaoTarefa, dataCriacaoTarefa, dataConslusaoTarefa, estadoTarefa"
+            String SQL = "INSERT INTO tarefas (idProjeto, nomeTarefa, descricaoTarefa, dataCriacaoTarefa, dataConclusaoTarefa, estadoTarefa"
                     + ") values (?,?,?,?,?,?)";
             connL = this.conn;
             ps = connL.prepareStatement(SQL, new String[]{"idTarefa"});
@@ -74,7 +74,7 @@ public class TarefasDAO {
             ps.setDate(4, dataSQL);
             dataJAVA = null;
             dataSQL = null;
-            dataJAVA = tarefa.getDataConslusaoTarefa();
+            dataJAVA = tarefa.getDataConclusaoTarefa();
             if(dataJAVA != null){
                 dataSQL = new java.sql.Date(dataJAVA.getTime());
                 ps.setDate(5, dataSQL);
@@ -116,9 +116,9 @@ public class TarefasDAO {
                 String nomeTarefa = rs.getString("nomeTarefa");
                 String descricaoTarefa = rs.getString("descricaoTarefa");
                 Date dataCriacaoProjeto = rs.getDate("dataCriacaoTarefa");
-                Date dataConslusaoTarefa = rs.getDate("dataConslusaoTarefa");
+                Date dataConclusaoTarefa = rs.getDate("dataConclusaoTarefa");
                 String estadoTarefa= rs.getString("estadoTarefa");
-                tarefas.add(new Tarefas(idTarefa, idProjeto, nomeTarefa, descricaoTarefa, dataCriacaoProjeto, dataConslusaoTarefa, estadoTarefa));
+                tarefas.add(new Tarefas(idTarefa, idProjeto, nomeTarefa, descricaoTarefa, dataCriacaoProjeto, dataConclusaoTarefa, estadoTarefa));
             }
         } catch (SQLException sqle) {
             JOptionPane.showMessageDialog(null, "Erro ao listar tarefas " + sqle);
@@ -143,9 +143,9 @@ public class TarefasDAO {
                 String nomeTarefa = rs.getString("nomeTarefa");
                 String descricaoTarefa = rs.getString("descricaoTarefa");
                 Date dataCriacaoProjeto = rs.getDate("dataCriacaoTarefa");
-                Date dataConslusaoTarefa = rs.getDate("dataConslusaoTarefa");
+                Date dataConclusaoTarefa = rs.getDate("dataConclusaoTarefa");
                 String estadoTarefa= rs.getString("estadoTarefa");
-                tarefa = new Tarefas(idTarefa, idProjeto, nomeTarefa, descricaoTarefa, dataCriacaoProjeto, dataConslusaoTarefa, estadoTarefa);
+                tarefa = new Tarefas(idTarefa, idProjeto, nomeTarefa, descricaoTarefa, dataCriacaoProjeto, dataConclusaoTarefa, estadoTarefa);
             }
         } catch (SQLException sqle) {
             JOptionPane.showMessageDialog(null, "Erro ao listar tarefas " + sqle);
@@ -161,7 +161,7 @@ public class TarefasDAO {
         }
         try {
             String SQL = "UPDATE tarefas set idProjeto=?, nomeTarefa=?, descricaoTarefa=?, "
-                    + "dataCriacaoTarefa=?, dataConslusaoTarefa=?, estadoTarefa=? WHERE idTarefa=?";
+                    + "dataCriacaoTarefa=?, dataConclusaoTarefa=?, estadoTarefa=? WHERE idTarefa=?";
             connL = this.conn;
             ps = connL.prepareStatement(SQL);
             ps.setInt(1, tarefa.getIdProjeto());
@@ -170,7 +170,7 @@ public class TarefasDAO {
             java.util.Date dataJAVA = tarefa.getDataCriacaoTarefa();  // Data da classe Java Util
             java.sql.Date dataSQL = new java.sql.Date(dataJAVA.getTime()); // Data da classe SQL
             ps.setDate(4, dataSQL);
-            dataJAVA = tarefa.getDataConslusaoTarefa();
+            dataJAVA = tarefa.getDataConclusaoTarefa();
             if (dataJAVA != null) {
                 dataSQL = new java.sql.Date(dataJAVA.getTime()); // Data da classe SQL
                 ps.setDate(5, dataSQL);
@@ -210,7 +210,7 @@ public class TarefasDAO {
         PreparedStatement ps = null;
         Connection connL = null;
         try {
-            String SQL = "UPDATE tarefas set estadoTarefa=?, dataConslusaoTarefa=? WHERE idTarefa=?";
+            String SQL = "UPDATE tarefas set estadoTarefa=?, dataConclusaoTarefa=? WHERE idTarefa=?";
             connL = this.conn;
             ps = connL.prepareStatement(SQL);
             ps.setString(1, estadoTarefa);

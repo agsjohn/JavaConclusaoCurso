@@ -62,8 +62,8 @@ public class TarefaAberta extends javax.swing.JPanel {
         String dataCriacao = "Tarefa criada em " + sdf.format(tarefa.getDataCriacaoTarefa());
         jLabelCriacao.setText(dataCriacao);
         
-        if(tarefa.getDataConslusaoTarefa() != null){
-            String dataConclusao = "Tarefa concluida em " + sdf.format(tarefa.getDataConslusaoTarefa());
+        if(tarefa.getDataConclusaoTarefa() != null){
+            String dataConclusao = "Tarefa concluida em " + sdf.format(tarefa.getDataConclusaoTarefa());
             jLabelConclusao.setText(dataConclusao);
         }
     }
@@ -96,8 +96,8 @@ public class TarefaAberta extends javax.swing.JPanel {
         String dataCriacao = "Tarefa criada em " + sdf.format(tarefa.getDataCriacaoTarefa());
         jLabelCriacao.setText(dataCriacao);
         
-        if(tarefa.getDataConslusaoTarefa() != null){
-            String dataConclusao = "Tarefa concluida em " + sdf.format(tarefa.getDataConslusaoTarefa());
+        if(tarefa.getDataConclusaoTarefa() != null){
+            String dataConclusao = "Tarefa concluida em " + sdf.format(tarefa.getDataConclusaoTarefa());
             jLabelConclusao.setText(dataConclusao);
         }
     }

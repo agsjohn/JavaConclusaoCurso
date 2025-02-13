@@ -97,7 +97,7 @@ public class EditTarefa extends javax.swing.JPanel {
         dateChooserPanel2.setSelectedDate(cal);
         
         //Calendario conclusao
-        Date dataConclusao = tarefa.getDataConslusaoTarefa();
+        Date dataConclusao = tarefa.getDataConclusaoTarefa();
         if(dataConclusao == null){
             dateChooserPanel1.setSelectedDate(null);
         } else{

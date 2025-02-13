@@ -40,9 +40,9 @@ public class ProjetosDAO {
                 String nomeProjeto = rs.getString("nomeProjeto");
                 String descricaoProjeto = rs.getString("descricaoProjeto");
                 Date dataCriacaoProjeto = rs.getDate("dataCriacaoProjeto");
-                Date dataConslusaoProjeto = rs.getDate("dataConslusaoProjeto");
+                Date dataConclusaoProjeto = rs.getDate("dataConclusaoProjeto");
                 Boolean finalizado = rs.getBoolean("finalizado");
-                projetos.add(new Projetos(idProjeto, nomeProjeto, descricaoProjeto, dataCriacaoProjeto, dataConslusaoProjeto, finalizado));
+                projetos.add(new Projetos(idProjeto, nomeProjeto, descricaoProjeto, dataCriacaoProjeto, dataConclusaoProjeto, finalizado));
             }
         } catch (SQLException sqle) {
             JOptionPane.showMessageDialog(null, "Erro ao listar projetos " + sqle);
@@ -60,7 +60,7 @@ public class ProjetosDAO {
             JOptionPane.showMessageDialog(null, "O objeto projeto não pode ser nulo.");
         }
         try {
-            String SQL = "INSERT INTO projetos (nomeProjeto, descricaoProjeto, dataCriacaoProjeto, dataConslusaoProjeto, finalizado)"
+            String SQL = "INSERT INTO projetos (nomeProjeto, descricaoProjeto, dataCriacaoProjeto, dataConclusaoProjeto, finalizado)"
                     + " values (?,?,?,?,?)";
             connL = this.conn;
             ps = connL.prepareStatement(SQL);
@@ -102,9 +102,9 @@ public class ProjetosDAO {
                 String nomeProjeto = rs.getString("nomeProjeto");
                 String descricaoProjeto = rs.getString("descricaoProjeto");
                 Date dataCriacaoProjeto = rs.getDate("dataCriacaoProjeto");
-                Date dataConslusaoProjeto = rs.getDate("dataConslusaoProjeto");
+                Date dataConclusaoProjeto = rs.getDate("dataConclusaoProjeto");
                 Boolean finalizado = rs.getBoolean("finalizado");
-                projeto = new Projetos(idProjeto, nomeProjeto, descricaoProjeto, dataCriacaoProjeto, dataConslusaoProjeto, finalizado);
+                projeto = new Projetos(idProjeto, nomeProjeto, descricaoProjeto, dataCriacaoProjeto, dataConclusaoProjeto, finalizado);
             }
         } catch (SQLException sqle) {
             JOptionPane.showMessageDialog(null, "Erro ao listar projetos " + sqle);
@@ -122,7 +122,7 @@ public class ProjetosDAO {
         }
         try {
             String SQL = "UPDATE projetos set nomeProjeto=?, descricaoProjeto=?, dataCriacaoProjeto=?, "
-                    + "dataConslusaoProjeto=?, finalizado=? WHERE idProjeto=?";
+                    + "dataConclusaoProjeto=?, finalizado=? WHERE idProjeto=?";
             connL = this.conn;
             ps = connL.prepareStatement(SQL);
             ps.setString(1, projeto.getNomeProjeto());

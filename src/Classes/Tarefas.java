@@ -26,22 +26,22 @@ public class Tarefas{
         this.estadoTarefa = estadoTarefa;
     }
 
-    public Tarefas(int idProjeto, String nomeTarefa, String descricaoTarefa, Date dataCriacaoTarefa, Date dataConslusaoTarefa, String estadoTarefa) {
+    public Tarefas(int idProjeto, String nomeTarefa, String descricaoTarefa, Date dataCriacaoTarefa, Date dataConclusaoTarefa, String estadoTarefa) {
         this.idProjeto = idProjeto;
         this.nomeTarefa = nomeTarefa;
         this.descricaoTarefa = descricaoTarefa;
         this.dataCriacaoTarefa = dataCriacaoTarefa;
-        this.dataConclusaoTarefa = dataConslusaoTarefa;
+        this.dataConclusaoTarefa = dataConclusaoTarefa;
         this.estadoTarefa = estadoTarefa;
     }
 
-    public Tarefas(int idTarefa, int idProjeto, String nomeTarefa, String descricaoTarefa, Date dataCriacaoTarefa, Date dataConslusaoTarefa, String estadoTarefa) {
+    public Tarefas(int idTarefa, int idProjeto, String nomeTarefa, String descricaoTarefa, Date dataCriacaoTarefa, Date dataConclusaoTarefa, String estadoTarefa) {
         this.idTarefa = idTarefa;
         this.idProjeto = idProjeto;
         this.nomeTarefa = nomeTarefa;
         this.descricaoTarefa = descricaoTarefa;
         this.dataCriacaoTarefa = dataCriacaoTarefa;
-        this.dataConclusaoTarefa = dataConslusaoTarefa;
+        this.dataConclusaoTarefa = dataConclusaoTarefa;
         this.estadoTarefa = estadoTarefa;
     }
 
@@ -85,12 +85,12 @@ public class Tarefas{
         this.dataCriacaoTarefa = dataCriacaoTarefa;
     }
 
-    public Date getDataConslusaoTarefa() {
+    public Date getDataConclusaoTarefa() {
         return dataConclusaoTarefa;
     }
 
-    public void setDataConslusaoTarefa(Date dataConslusaoTarefa) {
-        this.dataConclusaoTarefa = dataConslusaoTarefa;
+    public void setDataConclusaoTarefa(Date dataConclusaoTarefa) {
+        this.dataConclusaoTarefa = dataConclusaoTarefa;
     }
 
     public String getEstadoTarefa() {
